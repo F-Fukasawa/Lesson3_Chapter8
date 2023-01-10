@@ -14,13 +14,14 @@ public class Main {
 		
 		//関数型インターフェイス　Greeting において、 helloメソッドが文字列の引数を取る場合
 		//ラムダ式
-		Greeting greeting1 = (String word) -> {
+		Greeting greeting = (String word) -> {
 			System.out.println("\n" + word);
 			return "テスト";
 		};
-		System.out.println(greeting1.hello("こんちは"));
+		System.out.println(greeting.hello("こんちは"));
 		
 		//メソッド参照
-		Greeting greeting2 = System.out::println;
+		GreetingVoid greetingVoid = System.out::println;
+		greetingVoid.hello("\nコンニチハ");
 	}
 }
